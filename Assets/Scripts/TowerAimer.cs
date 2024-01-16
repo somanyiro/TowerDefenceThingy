@@ -35,13 +35,13 @@ public class TowerAimer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Enemy") return;
+        if (other.GetComponent<HealthComponent>() is null) return;
         enemiesInRange.Add(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag != "Enemy") return;
+        if (other.GetComponent<HealthComponent>() is null) return;
         if (enemiesInRange.Contains(other.gameObject)) enemiesInRange.Remove(other.gameObject);
     }
 }

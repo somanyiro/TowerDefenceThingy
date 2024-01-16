@@ -703,6 +703,10 @@ PrefabInstance:
       propertyPath: DamageBeam
       value: 
       objectReference: {fileID: 380155408}
+    - target: {fileID: 588375361715811061, guid: f0df33b559cd8676698217dec9d73cc9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 942243577233961948, guid: f0df33b559cd8676698217dec9d73cc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
