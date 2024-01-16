@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 5093141202938406384}
   - component: {fileID: 578091185375800298}
   - component: {fileID: 588375361715811061}
+  - component: {fileID: 962258475947590694}
   m_Layer: 0
   m_Name: Tower1
   m_TagString: Untagged
@@ -493,6 +494,21 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &962258475947590694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532399721490645492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2fff3cd0cc0a2ea965edde11013765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  timeInterval: 0.5
+  towerAimer: {fileID: 578091185375800298}
 --- !u!1 &6066701923341351691
 GameObject:
   m_ObjectHideFlags: 0

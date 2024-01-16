@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class TowerAimer : MonoBehaviour
 
     List<GameObject> enemiesInRange = new List<GameObject>();
 
+    [NonSerialized]
+    public GameObject target;
     public GameObject damageBeam;
     private LineRenderer beamLine;
     

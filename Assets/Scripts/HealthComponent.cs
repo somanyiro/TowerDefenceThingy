@@ -9,7 +9,7 @@ public class HealthComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = 100;
     }
 
     // Update is called once per frame
@@ -17,7 +17,13 @@ public class HealthComponent : MonoBehaviour
     {
         
     }
-    
-    
+
+    public void Damage(int amount)
+    {
+        Health -= amount;
+        if (Health <= 0)
+            Destroy(gameObject);
+
+    }
     
 }
