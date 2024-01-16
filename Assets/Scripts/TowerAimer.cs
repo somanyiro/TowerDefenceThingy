@@ -25,7 +25,11 @@ public class TowerAimer : MonoBehaviour
                 damageBeam.transform.position,
                 enemiesInRange[0].transform.position
             });
-            //damageBeam.transform.LookAt(enemiesInRange[0].transform);
+            beamLine.enabled = true;
+        }
+        else
+        {
+            beamLine.enabled = false;
         }
     }
 
