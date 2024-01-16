@@ -8,11 +8,12 @@ public class TowerAimer : MonoBehaviour
     List<GameObject> enemiesInRange = new List<GameObject>();
 
     public GameObject damageBeam;
+    private LineRenderer beamLine;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        beamLine = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -20,7 +21,11 @@ public class TowerAimer : MonoBehaviour
     {
         if (enemiesInRange.Count > 0)
         {
-            damageBeam.transform.LookAt(enemiesInRange[0].transform);
+            beamLine.SetPositions(new Vector3[] {
+                damageBeam.transform.position,
+                enemiesInRange[0].transform.position
+            });
+            //damageBeam.transform.LookAt(enemiesInRange[0].transform);
         }
     }
 
