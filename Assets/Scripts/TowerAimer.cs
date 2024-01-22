@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TowerAimer : MonoBehaviour
@@ -22,6 +23,12 @@ public class TowerAimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < enemiesInRange.Count; i++)
+        {
+            if (enemiesInRange[i].IsDestroyed())
+                enemiesInRange.RemoveAt(i);
+        }
+        
         if (enemiesInRange.Count > 0)
         {
             beamLine.SetPositions(new Vector3[] {
@@ -29,6 +36,7 @@ public class TowerAimer : MonoBehaviour
                 enemiesInRange[0].transform.position
             });
             beamLine.enabled = true;
+            target = enemiesInRange[0];
         }
         else
         {
