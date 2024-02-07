@@ -18,10 +18,12 @@ public class TowerBuilder : MonoBehaviour
             RaycastHit hit;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            
+            if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask(new []{"Selectable"})))
             {
                 Transform objectHit = hit.transform;
+
+                GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(objectHit.position);
             }
 
         }
