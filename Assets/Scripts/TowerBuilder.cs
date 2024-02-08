@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class TowerBuilder : MonoBehaviour
 {
+    private GameObject selectedSpot;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class TowerBuilder : MonoBehaviour
             {
                 Transform objectHit = hit.transform;
 
+                selectedSpot = objectHit.gameObject;
+                
                 GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(objectHit.position);
                 ShowUI(true);
             }
