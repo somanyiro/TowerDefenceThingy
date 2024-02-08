@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 public class TowerBuilder : MonoBehaviour
 {
     private GameObject selectedSpot;
+
+    public GameObject shopUI;
+    public GameObject modifyUI;
     
     // Start is called before the first frame update
     void Start()
@@ -29,22 +32,32 @@ public class TowerBuilder : MonoBehaviour
                 selectedSpot = objectHit.gameObject;
                 
                 GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(objectHit.position);
-                ShowUI(true);
+                
+                ShowShopUI(true);
+                ShowModifyUI(true);
             }
             else
             {
-                ShowUI(false);
+                ShowShopUI(false);
+                ShowModifyUI(false);
             }
         }
     }
 
-    void ShowUI(bool show)
+    void ShowShopUI(bool show)
     {
-        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+        CanvasGroup canvasGroup = shopUI.GetComponent<CanvasGroup>();
         canvasGroup.alpha = show ? 1f : 0f;
-        GetComponent<CanvasGroup>().interactable = show;
-        GetComponent<CanvasGroup>().blocksRaycasts = show;
+        canvasGroup.interactable = show;
+        canvasGroup.blocksRaycasts = show;
     }
     
+    void ShowModifyUI(bool show)
+    {
+        CanvasGroup canvasGroup = modifyUI.GetComponent<CanvasGroup>();
+        canvasGroup.alpha = show ? 1f : 0f;
+        canvasGroup.interactable = show;
+        canvasGroup.blocksRaycasts = show;
+    }
     
 }
