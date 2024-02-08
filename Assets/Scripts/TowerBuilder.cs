@@ -25,14 +25,22 @@ public class TowerBuilder : MonoBehaviour
                 Transform objectHit = hit.transform;
 
                 GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(objectHit.position);
-                GetComponent<CanvasGroup>().alpha = 1;
-                GetComponent<CanvasGroup>().interactable = true;
+                ShowUI(true);
             }
             else
             {
-                GetComponent<CanvasGroup>().alpha = 0;
-                GetComponent<CanvasGroup>().interactable = false;
+                ShowUI(false);
             }
         }
     }
+
+    void ShowUI(bool show)
+    {
+        CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.alpha = show ? 1f : 0f;
+        GetComponent<CanvasGroup>().interactable = show;
+        GetComponent<CanvasGroup>().blocksRaycasts = show;
+    }
+    
+    
 }
