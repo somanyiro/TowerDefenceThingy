@@ -3457,7 +3457,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 881004849698190734, guid: 83b1d4563632641d090ab4efc497da74, type: 3}
+  - {fileID: 6729806902356294302, guid: b205a0f8fddc4300cbb1826b73fbf5f8, type: 3}
+  - {fileID: 7686028106123428506, guid: 05949a3afb98087bb83a7cb6f6d7b4ae, type: 3}
+  - {fileID: 1830619423489858, guid: c09f0b7658707f4debe73f0f687039da, type: 3}
   path: {fileID: 1582288468}
 --- !u!1 &812403754
 GameObject:

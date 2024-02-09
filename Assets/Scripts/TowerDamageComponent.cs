@@ -24,6 +24,6 @@ public class TowerDamageComponent : MonoBehaviour
     void Attack()
     {
         if (towerAimer.target is not null)
-            towerAimer.target.GetComponent<HealthComponent>().Damage(damage);
+            towerAimer.target.GetComponent<Enemy>().Damage(damage);
     }
 }
