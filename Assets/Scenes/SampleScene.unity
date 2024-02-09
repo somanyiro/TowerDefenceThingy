@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7760201231247565908, guid: 3bda6c2226636e150bb58f592a0bb7b5, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 11400000, guid: 20a12e04916c8173faac3a8e31e1d5c6, type: 2}
     - target: {fileID: 8677820634430070002, guid: 3bda6c2226636e150bb58f592a0bb7b5, type: 3}
       propertyPath: m_Name
       value: TowerSpot (5)
@@ -2493,7 +2497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 381b7105577e45b68af1258231d099d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.57
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 381b7105577e45b68af1258231d099d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4028,6 +4032,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4186,6 +4191,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775c7af69c0849e4fbfc1278d088abee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1013399395
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,7 +5620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47b895e1eaed39225be1e7a245d39a1a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5199999
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47b895e1eaed39225be1e7a245d39a1a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6630,7 +6647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b420203d1b823b5a8a16eeb74dada8dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4000001
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b420203d1b823b5a8a16eeb74dada8dd, type: 3}
       propertyPath: m_LocalPosition.z
