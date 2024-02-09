@@ -18,13 +18,14 @@ public class MouseHoverManager : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask(new[] { "Selectable" })))
         {
             Transform objectHit = hit.transform;
 
             hoverTarget = objectHit.GetComponent<TowerSpot>().tower;
+            Debug.Log(hoverTarget.towerName);
         }
     }
 

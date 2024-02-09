@@ -2635,7 +2635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 70.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &638256777
@@ -3944,6 +3944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906148256}
   - component: {fileID: 906148257}
+  - component: {fileID: 906148258}
   m_Layer: 5
   m_Name: TowerDetails
   m_TagString: Untagged
@@ -3983,6 +3984,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &906148258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906148255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932a5ab1eecb3cf77a1f14bb80b3d5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseHoverManager: {fileID: 963194231}
+  towerNameText: {fileID: 848700143}
+  towerIcon: {fileID: 1886875285}
+  towerDetailsText: {fileID: 1791015801}
 --- !u!1 &913953416
 GameObject:
   m_ObjectHideFlags: 0
@@ -6918,7 +6935,7 @@ GameObject:
   - component: {fileID: 1886875286}
   - component: {fileID: 1886875285}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TowerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

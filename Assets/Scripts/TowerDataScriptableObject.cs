@@ -10,7 +10,8 @@ public class TowerDataScriptableObject : ScriptableObject
     public float attackInterval;
     public float damage;
     public string type;
-    public Texture2D icon;
+    public Sprite icon;
     public GameObject tower;
-
+    public int level;
+    public TowerDataScriptableObject nextLevel;
 }
