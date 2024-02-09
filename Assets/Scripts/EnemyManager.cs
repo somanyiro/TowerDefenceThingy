@@ -26,7 +26,9 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject enemy = Instantiate(enemies[0].gameObject, Vector3.zero, Quaternion.identity);
+        int randomIndex = Random.Range(0, enemies.Count);
+        
+        GameObject enemy = Instantiate(enemies[randomIndex].gameObject, Vector3.zero, Quaternion.identity);
         enemy.GetComponent<PathFollower>().pathCreator = path;
     }
 
