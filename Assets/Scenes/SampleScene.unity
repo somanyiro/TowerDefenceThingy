@@ -1203,6 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopUI: {fileID: 161655451}
   modifyUI: {fileID: 885965019}
+  upgradeButton: {fileID: 1139234666}
   upgradePriceText: {fileID: 564404198}
   emptyTower: {fileID: 6668608395712913280, guid: 340bc9fd89f999abab60c4bf5a0e991a, type: 3}
 --- !u!1 &363889918
@@ -4735,7 +4736,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1139234667}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 361992018}
+        m_TargetAssemblyTypeName: TowerBuilder, Assembly-CSharp
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1139234667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5234,7 +5247,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292404726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 361992018}
+        m_TargetAssemblyTypeName: TowerBuilder, Assembly-CSharp
+        m_MethodName: DestroyTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1292404726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5716,6 +5741,7 @@ GameObject:
   - component: {fileID: 1529250719}
   - component: {fileID: 1529250721}
   - component: {fileID: 1529250720}
+  - component: {fileID: 1529250722}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5839,6 +5865,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529250718}
   m_CullTransparentMesh: 1
+--- !u!114 &1529250722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529250718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edacf9409df8ac439bc5d5e34605138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532737073
 GameObject:
   m_ObjectHideFlags: 0

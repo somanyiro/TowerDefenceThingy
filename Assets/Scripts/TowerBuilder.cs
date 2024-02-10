@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TowerBuilder : MonoBehaviour
 {
-    private GameObject selectedSpot;
+    private TowerSpot selectedSpot;
     private Tower selectedTower;
 
     public GameObject shopUI;
@@ -35,8 +35,8 @@ public class TowerBuilder : MonoBehaviour
             {
                 Transform objectHit = hit.transform;
 
-                selectedSpot = objectHit.gameObject;
-                selectedTower = selectedSpot.GetComponent<TowerSpot>().tower;
+                selectedSpot = objectHit.GetComponent<TowerSpot>();
+                selectedTower = selectedSpot.tower;
                 
                 GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(objectHit.position);
                 
@@ -58,7 +58,8 @@ public class TowerBuilder : MonoBehaviour
             }
         }
         
-        if (selectedTower.upgradeTarget is not null)
+        //TODO: checking for if the upgrade target is null doesn't work for some reason
+        if (selectedTower is not null && selectedTower.upgradeTarget is not null)
         {
             upgradePriceText.text = selectedTower.upgradePrice.ToString();
             upgradeButton.interactable = MoneyManager.Instance.Money >= selectedTower.upgradePrice;
@@ -84,6 +85,30 @@ public class TowerBuilder : MonoBehaviour
         canvasGroup.alpha = show ? 1f : 0f;
         canvasGroup.interactable = show;
         canvasGroup.blocksRaycasts = show;
+    }
+
+    public void UpgradeTower()
+    {
+        if (selectedSpot is null) return;
+        if (selectedTower is null) return;
+        if (selectedTower.upgradeTarget is null) return;
+        
+        MoneyManager.Instance.Spend(selectedTower.upgradePrice);
+        selectedSpot.tower = selectedTower.upgradeTarget;
+        selectedSpot.UpdateTower();
+        
+        ShowModifyUI(false);
+    }
+
+    public void DestroyTower()
+    {
+        if (selectedSpot is null) return;
+        if (selectedTower is null) return;
+
+        selectedSpot.tower = emptyTower;
+        selectedSpot.UpdateTower();
+        
+        ShowModifyUI(false);
     }
     
 }

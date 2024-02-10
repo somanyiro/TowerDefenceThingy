@@ -68,6 +68,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
+      propertyPath: upgradeTarget
+      value: 
+      objectReference: {fileID: 4267828095889863022, guid: 43946d529a2dc588f90f80c8152854ff, type: 3}
+    - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: attackInterval
       value: 2
       objectReference: {fileID: 0}

@@ -22,9 +22,9 @@ public class TowerSpot : MonoBehaviour
 
     public void UpdateTower()
     {
-        foreach (GameObject t in towerOrigin)
+        foreach (Transform t in towerOrigin)
         {
-            Destroy(t);
+            Destroy(t.gameObject);
         }
 
         if (tower is null) return;
