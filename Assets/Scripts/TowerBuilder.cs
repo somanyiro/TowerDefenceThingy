@@ -61,7 +61,7 @@ public class TowerBuilder : MonoBehaviour
         if (selectedTower.upgradeTarget is not null)
         {
             upgradePriceText.text = selectedTower.upgradePrice.ToString();
-            upgradeButton.interactable = true;
+            upgradeButton.interactable = MoneyManager.Instance.Money >= selectedTower.upgradePrice;
         }
         else
         {
