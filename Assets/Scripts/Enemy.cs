@@ -35,16 +35,32 @@ public class Enemy : MonoBehaviour
     
     public void Damage(int amount)
     {
+        if (health <= 0) return;
+        
         health -= amount;
         if (health <= 0)
-            Destroy(gameObject);
+            Die();
         UpdateHealthBar();
 
-        TextParticle tp = Instantiate(textParticle);
-        tp.Setup(amount.ToString(), false, Color.red);
-        tp.transform.position = transform.position;
+        if (health > 0)
+        {
+            TextParticle tpDamage = Instantiate(textParticle);
+            tpDamage.Setup(amount.ToString(), false, Color.red);
+            tpDamage.transform.position = transform.position;
+        }
+        else
+        {
+            TextParticle tpReward = Instantiate(textParticle);
+            tpReward.Setup(carriedMoney.ToString(), true, Color.white);
+            tpReward.transform.position = transform.position;
+        }
     }
 
+    void Die()
+    {
+        Destroy(gameObject);//TODO: replace
+    }
+    
     void UpdateHealthBar()
     {
         healthBar.value = Map(health, 0, maxHealth, 0, 1);
