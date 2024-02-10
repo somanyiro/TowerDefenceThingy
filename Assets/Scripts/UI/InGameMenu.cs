@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InGameMenu : MonoBehaviour
@@ -44,5 +45,15 @@ public class InGameMenu : MonoBehaviour
         timeScaleText.text = desiredTimeScale.ToString("0.0");
         
         if (!gamePaused) Time.timeScale = desiredTimeScale;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
