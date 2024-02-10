@@ -39,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
       propertyPath: upgradeTarget
       value: 
-      objectReference: {fileID: 4267828095889863022}
+      objectReference: {fileID: 0}
     - target: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
       propertyPath: attackInterval
       value: 3
@@ -97,17 +97,6 @@ PrefabInstance:
       addedObject: {fileID: 1583480207436745223}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
---- !u!114 &4267828095889863022 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
-  m_PrefabInstance: {fileID: 421890659743896350}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabaf47f3c91f1a99b4b1f1e6b070703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5962264235541436493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6297418669884541779, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
