@@ -110,5 +110,14 @@ public class TowerBuilder : MonoBehaviour
         
         ShowModifyUI(false);
     }
+
+    public void PreviewUpgrade()
+    {
+        if (selectedSpot is null) return;
+        if (selectedTower is null) return;
+        if (selectedTower.upgradeTarget is null) return;
+        
+        MouseHoverManager.Instance.SetHoverTarget(selectedTower.upgradeTarget);
+    }
     
 }
