@@ -119,5 +119,22 @@ public class TowerBuilder : MonoBehaviour
         
         MouseHoverManager.Instance.SetHoverTarget(selectedTower.upgradeTarget);
     }
+
+    public void PreviewTower(Tower tower)
+    {
+        if (selectedSpot is null) return;
+        
+        MouseHoverManager.Instance.SetHoverTarget(tower);
+    }
+
+    public void BuyTower(Tower tower)
+    {
+        if (selectedSpot is null) return;
+        
+        MoneyManager.Instance.Spend(tower.price);
+        selectedSpot.tower = tower;
+        selectedSpot.UpdateTower();
+        ShowShopUI(false);
+    }
     
 }
