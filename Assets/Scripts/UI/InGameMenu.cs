@@ -10,13 +10,13 @@ public class InGameMenu : MonoBehaviour
     public CanvasGroup pauseMenu;
     public TextMeshProUGUI timeScaleText;
 
-    private bool gamePaused = false;
+    private bool gamePaused = true;
     private float desiredTimeScale = 1f;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        PauseGame();
     }
 
     // Update is called once per frame
