@@ -53,7 +53,11 @@ MonoBehaviour:
   icon: {fileID: 0}
   level: 0
   upgradeTarget: {fileID: 0}
+  price: 0
   upgradePrice: 0
+  attackEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &5849058983401339215
 SphereCollider:
   m_ObjectHideFlags: 0
