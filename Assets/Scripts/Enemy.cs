@@ -39,6 +39,10 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
             Destroy(gameObject);
         UpdateHealthBar();
+
+        TextParticle tp = Instantiate(textParticle);
+        tp.Setup(amount.ToString(), false, Color.red);
+        tp.transform.position = transform.position;
     }
 
     void UpdateHealthBar()

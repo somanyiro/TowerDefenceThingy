@@ -116,6 +116,7 @@ MonoBehaviour:
   carriedMoney: 5
   healthBarCanvas: {fileID: 1450415209613140010}
   healthBar: {fileID: 1726775014877945317}
+  textParticle: {fileID: 5715286696534387235, guid: b1ace3b0352d44eccb47520fd0948ceb, type: 3}
 --- !u!1 &1808424434240354227
 GameObject:
   m_ObjectHideFlags: 0

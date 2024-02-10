@@ -9,6 +9,7 @@ public class TextParticle : MonoBehaviour
     private Camera camera;
     public TextMeshProUGUI textMeshPro;
     public Image image;
+    public Canvas canvas;
     public float risingSpeed = 10;
     public float lifeTime = 1;
     
@@ -34,7 +35,7 @@ public class TextParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation =
+        canvas.transform.rotation =
             Quaternion.LookRotation(transform.position - camera.transform.position);
         transform.Translate(Vector3.up * risingSpeed * Time.deltaTime);
     }
