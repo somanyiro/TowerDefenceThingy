@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     public Canvas healthBarCanvas;
     public Slider healthBar;
+    public TextParticle textParticle;
     private Camera camera;
     
     // Start is called before the first frame update
