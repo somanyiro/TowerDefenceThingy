@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseHoverManager : MonoBehaviour
 {
     [NonSerialized]
-    public TowerDataScriptableObject hoverTarget;
+    public Tower hoverTarget;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class MouseHoverManager : MonoBehaviour
         }
     }
 
-    public void SetHoverTarget(TowerDataScriptableObject newTarget)
+    public void SetHoverTarget(Tower newTarget)
     {
         hoverTarget = newTarget;
     }

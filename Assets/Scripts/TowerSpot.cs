@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerSpot : MonoBehaviour
 {
-    public TowerDataScriptableObject tower;
+    public Tower tower;
     
     // Start is called before the first frame update
     void Start()
