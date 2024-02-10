@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7974542831071231038}
   - component: {fileID: 4805979694729387910}
   - component: {fileID: 7332110029861375472}
+  - component: {fileID: 6183157486462552772}
   m_Layer: 5
   m_Name: BuyTowerButton
   m_TagString: Untagged
@@ -262,6 +263,19 @@ MonoBehaviour:
   tower: {fileID: 6668608395712913280, guid: 340bc9fd89f999abab60c4bf5a0e991a, type: 3}
   priceText: {fileID: 2756793556430022064}
   towerIcon: {fileID: 2948754074701345519}
+--- !u!114 &6183157486462552772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305262454424126955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &2446816829678457907
 GameObject:
   m_ObjectHideFlags: 0
