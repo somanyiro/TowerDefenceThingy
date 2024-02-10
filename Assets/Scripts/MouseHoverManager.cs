@@ -5,8 +5,22 @@ using UnityEngine;
 
 public class MouseHoverManager : MonoBehaviour
 {
+    public static MouseHoverManager Instance { get; private set; }
+    
     [NonSerialized]
     public Tower hoverTarget;
+    
+    private void Awake()
+    {
+        if (Instance is not null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -18,14 +32,13 @@ public class MouseHoverManager : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask(new[] { "Selectable" })))
         {
             Transform objectHit = hit.transform;
 
             hoverTarget = objectHit.GetComponent<TowerSpot>().tower;
-            Debug.Log(hoverTarget.towerName);
         }
     }
 

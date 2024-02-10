@@ -7,6 +7,7 @@ public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager Instance { get; private set; }
 
+    public int startingMoney = 20;
     public int Money { get; private set; }
 
     public void Spend(int amount)
@@ -21,7 +22,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Start()
     {
-        Money = 20;
+        Money = startingMoney;
     }
 
     private void Awake()
