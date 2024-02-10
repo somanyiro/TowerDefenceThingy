@@ -20,6 +20,13 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
+    public void Earn(int amount)
+    {
+        Money += amount;
+        if (Money > 999)
+            Money = 999;
+    }
+
     private void Start()
     {
         Money = startingMoney;

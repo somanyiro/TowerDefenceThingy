@@ -59,6 +59,8 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);//TODO: replace
+        
+        MoneyManager.Instance.Earn(carriedMoney);
     }
     
     void UpdateHealthBar()
