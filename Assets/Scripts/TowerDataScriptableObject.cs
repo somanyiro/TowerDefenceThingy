@@ -11,7 +11,6 @@ public class TowerDataScriptableObject : ScriptableObject
     public float damage;
     public string type;
     public Sprite icon;
-    public GameObject tower;
     public int level;
     public TowerDataScriptableObject nextLevel;
 }
