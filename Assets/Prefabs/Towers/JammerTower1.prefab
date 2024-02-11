@@ -111,6 +111,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
+      propertyPath: upgradeTarget
+      value: 
+      objectReference: {fileID: 8125450091445788392, guid: b3516e1cb068f20bda595b525d000fd1, type: 3}
+    - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: attackInterval
       value: 1
       objectReference: {fileID: 0}
@@ -221,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generator: {fileID: 3341985987691666383}
-  rotationSpeed: 20
+  rotationSpeed: 50
 --- !u!198 &6850371802695781012
 ParticleSystem:
   m_ObjectHideFlags: 0
