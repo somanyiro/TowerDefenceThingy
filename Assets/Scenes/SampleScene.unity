@@ -3326,7 +3326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: wave 1
+  m_text: wave 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fbdf2e7c17e5a740da91c40a174b4df2, type: 2}
   m_sharedMaterial: {fileID: -1045178203592032501, guid: fbdf2e7c17e5a740da91c40a174b4df2, type: 2}
@@ -3485,7 +3485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acb0b43daab6dde1abcfaaaaa8307f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMoney: 999
+  startingMoney: 20
 --- !u!1001 &806612978
 PrefabInstance:
   m_ObjectHideFlags: 0

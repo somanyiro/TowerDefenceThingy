@@ -7,7 +7,6 @@ public class LaserComponent : MonoBehaviour
     public Vector3 laserSource;
     private Tower tower;
     private LineRenderer lineRenderer;
-    private Enemy target;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,6 @@ public class LaserComponent : MonoBehaviour
                 tower.enemiesInRange[0].transform.position
             });
 
-            target = tower.enemiesInRange[0].GetComponent<Enemy>();
         }
         else
         {
@@ -39,8 +37,8 @@ public class LaserComponent : MonoBehaviour
 
     public void DamageTarget(int amount)
     {
-        if (target is null) return;
+        if (tower.enemiesInRange.Count == 0) return;
         
-        target.Damage(amount);
+        tower.enemiesInRange[0].GetComponent<Enemy>().Damage(amount);
     }
 }

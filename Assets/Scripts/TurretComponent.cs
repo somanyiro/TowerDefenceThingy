@@ -8,7 +8,6 @@ public class TurretComponent : MonoBehaviour
     public Transform turret;
 
     private Tower tower;
-    private Enemy target;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +23,6 @@ public class TurretComponent : MonoBehaviour
             
             bulletParticles.transform.LookAt(tower.enemiesInRange[0].transform.position+Vector3.up/2);
             turret.LookAt(tower.enemiesInRange[0].transform.position+Vector3.up/2);
-            
-            target = tower.enemiesInRange[0].GetComponent<Enemy>();
         }
         else
         {
@@ -35,8 +32,8 @@ public class TurretComponent : MonoBehaviour
     
     public void DamageTarget(int amount)
     {
-        if (target is null) return;
+        if (tower.enemiesInRange.Count == 0) return;
         
-        target.Damage(amount);
+        tower.enemiesInRange[0].GetComponent<Enemy>().Damage(amount);
     }
 }
