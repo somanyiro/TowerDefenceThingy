@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public Slider healthBar;
     public TextParticle textParticle;
     private Camera camera;
+
+    private float slowDuration;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,15 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (slowDuration > 0)
+        {
+            slowDuration -= Time.deltaTime;
+            if (slowDuration <= 0)
+            {
+                GetComponent<PathFollower>().speed = speed;
+            }
+        }
+        
         healthBarCanvas.transform.rotation =
             Quaternion.LookRotation(healthBarCanvas.transform.position - camera.transform.position);
     }
@@ -58,7 +69,9 @@ public class Enemy : MonoBehaviour
 
     public void Slow(int amount, float duration)
     {
-        
+        GetComponent<PathFollower>().speed = speed / amount;
+        if (slowDuration < duration)
+            slowDuration = duration;
     }
 
     void Die()
