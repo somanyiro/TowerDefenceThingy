@@ -110,6 +110,7 @@ public class Enemy : MonoBehaviour
             GetComponent<PathFollower>().distanceTravelled = 0;
             this.enabled = true;
             health = maxHealth;
+            UpdateHealthBar();
         }
         else
         {
