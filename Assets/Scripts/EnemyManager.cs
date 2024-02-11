@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,22 +7,49 @@ using PathCreation.Examples;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager Instance { get; private set; }
+
     [SerializeField]
     List<Wave> waves;
 
     [SerializeField]
     public PathCreator path;
 
-    public int currentWave = 0;
     private bool waveOngoing = false;
     
     private Timer wavePreperationTimer;
+
+    public int CurrentWave { get; private set; } = 0;
+    public float TimeTillNextWave { get; private set; }
     
+    public delegate void WaveFinishedEventHandler(object sender, EventArgs e);
+    public event WaveFinishedEventHandler WaveFinished;
+    public delegate void WaveStartedEventHandler(object sender, EventArgs e);
+    public event WaveStartedEventHandler WaveStarted;
+    
+    
+    
+    private void Awake()
+    {
+        if (Instance is not null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
     {
-        wavePreperationTimer = new Timer(0, false);
+        wavePreperationTimer = new Timer(0);
+        if (waves.Count > CurrentWave)
+        {
+            wavePreperationTimer.SetWaitTime(waves[CurrentWave].preperationTime);
+            wavePreperationTimer.Reset();
+        }
     }
 
     // Update is called once per frame
@@ -29,17 +57,19 @@ public class EnemyManager : MonoBehaviour
     {
         wavePreperationTimer.AdvanceTimer(Time.deltaTime);
 
+        TimeTillNextWave = wavePreperationTimer.timeLeft;
+        
         if (wavePreperationTimer.finishedThisFrame)
         {
             waveOngoing = true;
-            IEnumerator coroutine = SpawnWave(waves[currentWave]);
+            IEnumerator coroutine = SpawnWave(waves[CurrentWave]);
             StartCoroutine(coroutine);
-            currentWave++;
+            CurrentWave++;
         }
         
-        if (!waveOngoing && waves.Count > currentWave && wavePreperationTimer.timeLeft <= 0)
+        if (!waveOngoing && waves.Count > CurrentWave && wavePreperationTimer.timeLeft <= 0)
         {
-            wavePreperationTimer.SetWaitTime(waves[currentWave].preperationTime);
+            wavePreperationTimer.SetWaitTime(waves[CurrentWave].preperationTime);
             wavePreperationTimer.Reset();
         }
 
@@ -53,6 +83,8 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator SpawnWave(Wave wave)
     {
+        OnWaveStarted(EventArgs.Empty);
+        
         foreach (var item in wave.enemyOrder)
         {
             for (int i = 0; i < item.Value; i++)
@@ -63,7 +95,24 @@ public class EnemyManager : MonoBehaviour
         }
 
         waveOngoing = false;
+        OnWaveFinished(EventArgs.Empty);
     }
 
+    public void SkipWavePreperation()
+    {
+        wavePreperationTimer.SetWaitTime(0);
+    }
+    
+    protected virtual void OnWaveFinished(EventArgs e)
+    {
+        WaveFinishedEventHandler handler = WaveFinished;
+        handler?.Invoke(this, e);
+    }
+    
+    protected virtual void OnWaveStarted(EventArgs e)
+    {
+        WaveStartedEventHandler handler = WaveStarted;
+        handler?.Invoke(this, e);
+    }
     
 }

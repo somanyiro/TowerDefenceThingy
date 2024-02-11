@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3fc7f22242cc21398807b5fa07e2ea, type: 3}
   m_Name: Wave1
   m_EditorClassIdentifier: 
+  preperationTime: 30
   timeBetweenSpawns: 1
-  enemies:
+  enemyOrder:
     keys:
     - {fileID: 433683748548434825, guid: b205a0f8fddc4300cbb1826b73fbf5f8, type: 3}
     values: 03000000

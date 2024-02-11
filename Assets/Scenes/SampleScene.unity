@@ -1284,6 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333302248}
+  - component: {fileID: 333302249}
   m_Layer: 5
   m_Name: WaveStarter
   m_TagString: Untagged
@@ -1311,6 +1312,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!225 &333302249
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333302247}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &361992016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3575,10 +3588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd5bfeaa5e2cf100bc97594243bf4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 6729806902356294302, guid: b205a0f8fddc4300cbb1826b73fbf5f8, type: 3}
-  - {fileID: 7686028106123428506, guid: 05949a3afb98087bb83a7cb6f6d7b4ae, type: 3}
-  - {fileID: 1830619423489858, guid: c09f0b7658707f4debe73f0f687039da, type: 3}
+  waves:
+  - {fileID: 11400000, guid: e475f43d8d7db50c1a73422cf86c3c47, type: 2}
+  - {fileID: 11400000, guid: f8740d516369f31bfab45c81e83542f6, type: 2}
   path: {fileID: 1582288468}
 --- !u!1 &819215540
 GameObject:
@@ -4184,6 +4196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913953417}
+  - component: {fileID: 913953418}
   m_Layer: 5
   m_Name: GameProgress
   m_TagString: Untagged
@@ -4211,6 +4224,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &913953418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913953416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf620d7a823fa15da7de7f900754d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveCountText: {fileID: 720023418}
+  waveStarter: {fileID: 333302249}
+  waveTimeText: {fileID: 380926845}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,7 +6650,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572533886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 913953418}
+        m_TargetAssemblyTypeName: WaveDisplay, Assembly-CSharp
+        m_MethodName: StartWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1572533886
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Timer
     public bool finished = false;
     public bool finishedThisFrame = false;
     public float timeLeft = 0;
-    public Timer(float waitTime = 1, bool startNow = true)
+    public Timer(float waitTime = 1)
     {
         this.waitTime = waitTime;
         Reset();
@@ -27,6 +27,7 @@ public class Timer
         {
             finished = true;
             finishedThisFrame = true;
+            timeLeft = 0;
         }
     }
 
