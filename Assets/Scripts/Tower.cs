@@ -33,10 +33,9 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TODO: replace with object caching
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
-            if (enemiesInRange[i].IsDestroyed())
+            if (enemiesInRange[i].GetComponent<Enemy>().isActive == false)
                 enemiesInRange.RemoveAt(i);
         }
     }
