@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,15 @@ public class TowerBuilder : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
+    {
+    }
+    
+    private void Awake()
+    {
+        GameManager.Instance.SetupGame += OnSetupGame;
+    }
+
+    void OnSetupGame(object sender, EventArgs e)
     {
         ShowModifyUI(false);
         ShowShopUI(false);
@@ -59,7 +69,6 @@ public class TowerBuilder : MonoBehaviour
             }
         }
         
-        //TODO: checking for if the upgrade target is null doesn't work for some reason
         if (selectedTower is not null && selectedTower.upgradeTarget is not null)
         {
             upgradePriceText.text = selectedTower.upgradePrice.ToString();
@@ -137,5 +146,6 @@ public class TowerBuilder : MonoBehaviour
         selectedSpot.UpdateTower();
         ShowShopUI(false);
     }
+    
     
 }

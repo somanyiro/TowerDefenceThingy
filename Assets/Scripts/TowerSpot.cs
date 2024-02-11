@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,18 @@ public class TowerSpot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateTower();
     }
 
+    private void Awake()
+    {
+        GameManager.Instance.SetupGame += OnSetupGame;
+    }
+
+    void OnSetupGame(object sender, EventArgs e)
+    {
+        UpdateTower();
+    }
+    
     // Update is called once per frame
     void Update()
     {

@@ -14,12 +14,9 @@ public class MouseHoverManager : MonoBehaviour
     {
         if (Instance is not null && Instance != this)
         {
-            Destroy(this);
+            Destroy(Instance.gameObject);
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
     
     // Start is called before the first frame update

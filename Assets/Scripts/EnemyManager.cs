@@ -36,16 +36,14 @@ public class EnemyManager : MonoBehaviour
     {
         if (Instance is not null && Instance != this)
         {
-            Destroy(this);
+            Destroy(Instance.gameObject);
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
+        
+        GameManager.Instance.SetupGame += OnSetupGame;
     }
-    
-    // Start is called before the first frame update
-    void Start()
+
+    void OnSetupGame(object sender, EventArgs e)
     {
         wavePreperationTimer = new Timer(0);
         if (waves.Count > CurrentWave)
@@ -53,6 +51,14 @@ public class EnemyManager : MonoBehaviour
             wavePreperationTimer.SetWaitTime(waves[CurrentWave].preperationTime);
             wavePreperationTimer.Reset();
         }
+        
+        activeEnemies.Clear();
+        inactiveEnemies.Clear();
+    }
+    
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
     // Update is called once per frame

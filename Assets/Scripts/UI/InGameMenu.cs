@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,7 +17,7 @@ public class InGameMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PauseGame();
+        
     }
 
     // Update is called once per frame
@@ -55,5 +56,17 @@ public class InGameMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void Awake()
+    {
+        GameManager.Instance.SetupGame += OnSetupGame;
+    }
+
+    void OnSetupGame(object sender, EventArgs e)
+    {
+        gamePaused = true;
+        PauseGame();
+        ChangeTimeScale(2);
     }
 }

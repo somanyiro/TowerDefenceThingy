@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,18 +15,21 @@ public class HealthManager : MonoBehaviour
     {
         if (Instance is not null && Instance != this)
         {
-            Destroy(this);
+            Destroy(Instance.gameObject);
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
+     
+        GameManager.Instance.SetupGame += OnSetupGame;
+    }
+
+    void OnSetupGame(object sender, EventArgs e)
+    {
+        PlayerHealth = maxPlayerHealth;
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        PlayerHealth = maxPlayerHealth;
     }
 
     // Update is called once per frame
