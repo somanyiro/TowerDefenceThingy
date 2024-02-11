@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     private Camera camera;
 
     private float slowDuration;
-    private bool isActive;
+    public bool isActive;
     
     public delegate void DiedEventHandler(object sender, EventArgs e);
     public event DiedEventHandler Died;
