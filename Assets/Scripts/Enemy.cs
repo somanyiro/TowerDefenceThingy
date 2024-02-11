@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Slow(int amount, float duration)
+    public void Slow(float amount, float duration)
     {
         GetComponent<PathFollower>().speed = speed / amount;
         if (slowDuration < duration)

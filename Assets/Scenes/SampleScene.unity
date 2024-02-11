@@ -3591,6 +3591,12 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: e475f43d8d7db50c1a73422cf86c3c47, type: 2}
   - {fileID: 11400000, guid: f8740d516369f31bfab45c81e83542f6, type: 2}
+  - {fileID: 11400000, guid: 83342bcd1ecf406e6a95628bea39afb2, type: 2}
+  - {fileID: 11400000, guid: 23fe4b83c8020a4f79b8b5828eb0d61a, type: 2}
+  - {fileID: 11400000, guid: 274fc075a75dab5478c4473a9c0aadbb, type: 2}
+  - {fileID: 11400000, guid: caf74b5c674a472d59dc42c13d2d94b5, type: 2}
+  - {fileID: 11400000, guid: ac85228040ec0a6aab5193e83a919415, type: 2}
+  - {fileID: 11400000, guid: fbe6460f55e431f4d975744c5d7e523d, type: 2}
   path: {fileID: 1582288468}
 --- !u!1 &819215540
 GameObject:

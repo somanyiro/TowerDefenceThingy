@@ -92,12 +92,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1019112304611803045, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
       propertyPath: range
-      value: 20
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1019112304611803045, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
       propertyPath: upgradeTarget
       value: 
-      objectReference: {fileID: 8125450091445788392}
+      objectReference: {fileID: 0}
     - target: {fileID: 7028469548841323893, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
       propertyPath: m_Name
       value: JammerTower2
@@ -164,14 +164,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7467238167567488646, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
   m_PrefabInstance: {fileID: 9144551291267522893}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8125450091445788392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1019112304611803045, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
-  m_PrefabInstance: {fileID: 9144551291267522893}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabaf47f3c91f1a99b4b1f1e6b070703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
