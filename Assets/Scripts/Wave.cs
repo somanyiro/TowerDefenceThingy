@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Wave : ScriptableObject
 {
+    public float preperationTime = 10f;
     public float timeBetweenSpawns = 1f;
-    public UDictionary<Enemy, int> enemies = new UDictionary<Enemy, int>();
-
+    public UDictionary<Enemy, int> enemyOrder = new UDictionary<Enemy, int>();
 }
