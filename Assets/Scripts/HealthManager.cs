@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static HealthManager Instance { get; private set; }
 
     public int maxPlayerHealth = 5;
     public int PlayerHealth { get; private set; }
@@ -32,4 +33,15 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Enemy>() is null) return;
+        PlayerHealth -= 1;
+
+        if (PlayerHealth == 0)
+            SceneManager.LoadScene(0);
+    }
+    
+    
 }

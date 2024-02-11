@@ -11,14 +11,14 @@ public class PlayerHealthDisplay : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        slider.maxValue = GameManager.Instance.maxPlayerHealth;
-        GetComponent<RectTransform>().sizeDelta = new Vector2(19 * GameManager.Instance.maxPlayerHealth / 2, 26); 
+        slider.maxValue = HealthManager.Instance.maxPlayerHealth;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(19 * HealthManager.Instance.maxPlayerHealth / 2, 26); 
         //this is based on the size of the texture that's filling the slider
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = GameManager.Instance.PlayerHealth;
+        slider.value = HealthManager.Instance.PlayerHealth;
     }
 }
