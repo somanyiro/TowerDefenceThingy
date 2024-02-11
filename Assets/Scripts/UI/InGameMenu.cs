@@ -9,7 +9,8 @@ public class InGameMenu : MonoBehaviour
 {
     public CanvasGroup pauseMenu;
     public TextMeshProUGUI timeScaleText;
-
+    public TextMeshProUGUI pauseButtonText;
+    
     private bool gamePaused = true;
     private float desiredTimeScale = 1f;
     
@@ -35,6 +36,7 @@ public class InGameMenu : MonoBehaviour
         pauseMenu.GetComponent<LayoutElement>().ignoreLayout = !gamePaused;
 
         Time.timeScale = gamePaused ? 0f : desiredTimeScale;
+        pauseButtonText.text = gamePaused ? "play" : "pause";
     }
 
     public void ChangeTimeScale(float value)
