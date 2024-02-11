@@ -56,6 +56,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Slow(int amount, float duration)
+    {
+        
+    }
+
     void Die()
     {
         Destroy(gameObject);//TODO: replace
