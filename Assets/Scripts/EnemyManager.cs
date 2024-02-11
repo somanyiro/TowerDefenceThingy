@@ -7,7 +7,7 @@ using PathCreation.Examples;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField]
-    List<PathFollower> enemies;
+    List<Wave> waves;
 
     [SerializeField]
     public PathCreator path;
@@ -26,10 +26,12 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int randomIndex = Random.Range(0, enemies.Count);
+        //int randomIndex = Random.Range(0, enemies.Count);
         
-        GameObject enemy = Instantiate(enemies[randomIndex].gameObject, Vector3.zero, Quaternion.identity);
-        enemy.GetComponent<PathFollower>().pathCreator = path;
+        //GameObject enemy = Instantiate(enemies[randomIndex].gameObject, Vector3.zero, Quaternion.identity);
+        //enemy.GetComponent<PathFollower>().pathCreator = path;
     }
 
+    
+    
 }
