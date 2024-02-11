@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PathCreation.Examples;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    public string type;
     public int maxHealth;
     private int health;
     public int speed;
@@ -17,6 +19,10 @@ public class Enemy : MonoBehaviour
     private Camera camera;
 
     private float slowDuration;
+    private bool isActive;
+    
+    public delegate void DiedEventHandler(object sender, EventArgs e);
+    public event DiedEventHandler Died;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +32,7 @@ public class Enemy : MonoBehaviour
         UpdateHealthBar();
         
         camera = Camera.main;
+        SetActive(true);
     }
 
     // Update is called once per frame
@@ -76,7 +83,9 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);//TODO: replace
+        SetActive(false);
+        OnDied(EventArgs.Empty);
+        transform.position = new Vector3(0, -100, 0);
         
         MoneyManager.Instance.Earn(carriedMoney);
     }
@@ -89,5 +98,29 @@ public class Enemy : MonoBehaviour
     float Map(float value, float low1, float high1, float low2, float high2)
     {
         return low2 + (value - low1) * (high2 - low2) / (high1 - low1);
+    }
+
+    public void SetActive(bool active)
+    {
+        isActive = active;
+
+        if (isActive)
+        {
+            GetComponent<PathFollower>().enabled = true;
+            GetComponent<PathFollower>().distanceTravelled = 0;
+            this.enabled = true;
+            health = maxHealth;
+        }
+        else
+        {
+            GetComponent<PathFollower>().enabled = false;
+            this.enabled = false;
+        }
+    }
+    
+    protected virtual void OnDied(EventArgs e)
+    {
+        DiedEventHandler handler = Died;
+        handler?.Invoke(this, e);
     }
 }

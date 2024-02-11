@@ -57,6 +57,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6293823999538746521, guid: 83b1d4563632641d090ab4efc497da74, type: 3}
+      propertyPath: type
+      value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293823999538746521, guid: 83b1d4563632641d090ab4efc497da74, type: 3}
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}

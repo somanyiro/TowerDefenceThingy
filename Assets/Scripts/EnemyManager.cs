@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
 using PathCreation.Examples;
+using System.Linq;
+using UnityEngine.UIElements;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -26,8 +28,9 @@ public class EnemyManager : MonoBehaviour
     public event WaveFinishedEventHandler WaveFinished;
     public delegate void WaveStartedEventHandler(object sender, EventArgs e);
     public event WaveStartedEventHandler WaveStarted;
-    
-    
+
+    private List<Enemy> activeEnemies = new List<Enemy>();
+    private List<Enemy> inactiveEnemies = new List<Enemy>();
     
     private void Awake()
     {
@@ -77,8 +80,21 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnEnemy(Enemy enemy)
     {
+        foreach (var e in inactiveEnemies)
+        {
+            if (e.type == enemy.type)
+            {
+                inactiveEnemies.Remove(e);
+                activeEnemies.Add(e);
+                e.SetActive(true);
+                return;
+            }
+        }
+        
         GameObject newEnemy = Instantiate(enemy.gameObject, new Vector3(0, -100, 0), Quaternion.identity);
         newEnemy.GetComponent<PathFollower>().pathCreator = path;
+        newEnemy.GetComponent<Enemy>().Died += OnEnemyDied;
+        activeEnemies.Add(newEnemy.GetComponent<Enemy>());
     }
 
     IEnumerator SpawnWave(Wave wave)
@@ -114,5 +130,11 @@ public class EnemyManager : MonoBehaviour
         WaveStartedEventHandler handler = WaveStarted;
         handler?.Invoke(this, e);
     }
-    
+
+    public void OnEnemyDied(object sender, EventArgs e)
+    {
+        inactiveEnemies.Add(sender as Enemy);
+        if (activeEnemies.Contains(sender))
+            activeEnemies.Remove(sender as Enemy);
+    }
 }
