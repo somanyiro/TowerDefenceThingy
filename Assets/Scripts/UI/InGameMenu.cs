@@ -50,7 +50,7 @@ public class InGameMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        GameManager.Instance.RestartGame();
     }
 
     public void QuitGame()

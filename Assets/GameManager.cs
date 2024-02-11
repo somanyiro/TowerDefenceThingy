@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,5 +40,11 @@ public class GameManager : MonoBehaviour
     {
         SetupGameEventHandler handler = SetupGame;
         handler?.Invoke(this, e);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+        OnSetupGame(EventArgs.Empty);
     }
 }
