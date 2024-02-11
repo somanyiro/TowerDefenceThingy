@@ -3472,7 +3472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acb0b43daab6dde1abcfaaaaa8307f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMoney: 20
+  startingMoney: 999
 --- !u!1001 &806612978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5311,9 +5311,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1644193400}
   - {fileID: 1472296808}
   - {fileID: 585238937}
-  - {fileID: 1644193400}
   - {fileID: 242140361}
   m_Father: {fileID: 161655452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -96,11 +96,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: price
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: range
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: towerName
@@ -108,7 +108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: upgradePrice
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: upgradeTarget

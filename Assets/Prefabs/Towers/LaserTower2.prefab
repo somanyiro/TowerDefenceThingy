@@ -37,12 +37,16 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
+      propertyPath: damage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
       propertyPath: upgradeTarget
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
       propertyPath: attackInterval
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5858684720462598304, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
       propertyPath: m_Name

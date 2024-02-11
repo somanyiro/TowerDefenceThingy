@@ -4860,7 +4860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: damage
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3595983136843298153, guid: 7bd377c28f40d577a95063704c61c044, type: 3}
       propertyPath: towerName

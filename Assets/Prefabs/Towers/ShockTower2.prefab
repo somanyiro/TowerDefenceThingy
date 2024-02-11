@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: range
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 6628547832029658165, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628547832029658165, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
+      propertyPath: upgradeTarget
+      value: 
+      objectReference: {fileID: 8695745973122599245}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5314108781345467102, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
@@ -152,3 +160,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637005876475516182, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
   m_PrefabInstance: {fileID: 2544581900644758904}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8695745973122599245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6628547832029658165, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
+  m_PrefabInstance: {fileID: 2544581900644758904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabaf47f3c91f1a99b4b1f1e6b070703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
