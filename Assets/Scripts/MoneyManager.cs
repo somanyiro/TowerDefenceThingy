@@ -34,13 +34,13 @@ public class MoneyManager : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.Instance.SetupGame += OnSetupGame;
-        
         if (Instance is not null && Instance != this)
         {
             Destroy(Instance.gameObject);
         }
         Instance = this;
+        
+        GameManager.Instance.SetupGame += OnSetupGame;
     }
 
     void OnSetupGame(object sender, EventArgs e)
