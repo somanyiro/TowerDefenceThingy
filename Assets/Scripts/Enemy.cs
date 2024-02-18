@@ -56,8 +56,6 @@ public class Enemy : MonoBehaviour
         if (health <= 0) return;
         
         health -= amount;
-        if (health <= 0)
-            Die();
         UpdateHealthBar();
 
         if (health > 0)
@@ -72,6 +70,9 @@ public class Enemy : MonoBehaviour
             tpReward.Setup(carriedMoney.ToString(), true, Color.white);
             tpReward.transform.position = transform.position;
         }
+        
+        if (health <= 0)
+            Die();
     }
 
     public void Slow(float amount, float duration)
