@@ -20,9 +20,11 @@ public class TurretComponent : MonoBehaviour
         if (tower.enemiesInRange.Count > 0)
         {
             bulletParticles.enableEmission = true;
-            
-            bulletParticles.transform.LookAt(tower.enemiesInRange[0].transform.position+Vector3.up/2);
-            turret.LookAt(tower.enemiesInRange[0].transform.position+Vector3.up/2);
+
+            Vector3 target = tower.enemiesInRange[0].transform.position +
+                             tower.enemiesInRange[0].GetComponent<Enemy>().towerAimTarget;
+            bulletParticles.transform.LookAt(target);
+            turret.LookAt(target);
         }
         else
         {

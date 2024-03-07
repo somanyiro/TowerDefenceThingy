@@ -25,7 +25,7 @@ public class LaserComponent : MonoBehaviour
             lineRenderer.SetPositions(new []
             {
                 transform.position + laserSource,
-                tower.enemiesInRange[0].transform.position
+                tower.enemiesInRange[0].transform.position + tower.enemiesInRange[0].GetComponent<Enemy>().towerAimTarget
             });
 
         }
