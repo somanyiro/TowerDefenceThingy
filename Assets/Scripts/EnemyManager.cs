@@ -34,14 +34,7 @@ public class EnemyManager : MonoBehaviour
     
     private void Awake()
     {
-        if (Instance is not null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
     
     // Start is called before the first frame update

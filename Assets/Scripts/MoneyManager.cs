@@ -34,13 +34,6 @@ public class MoneyManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance is not null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
 }
