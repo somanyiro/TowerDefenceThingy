@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private int health;
     public int speed;
     public int carriedMoney;
+    public Vector3 towerAimTarget;
 
     public Canvas healthBarCanvas;
     public Slider healthBar;

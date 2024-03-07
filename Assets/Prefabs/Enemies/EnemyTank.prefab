@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: carriedMoney
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6293823999538746521, guid: 83b1d4563632641d090ab4efc497da74, type: 3}
+      propertyPath: towerAimTarget.y
+      value: 1.131
+      objectReference: {fileID: 0}
     - target: {fileID: 9184990373485169148, guid: 83b1d4563632641d090ab4efc497da74, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
