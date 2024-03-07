@@ -32,6 +32,8 @@ public class HealthManager : MonoBehaviour
         if (other.GetComponent<Enemy>() is null) return;
         PlayerHealth -= 1;
 
+        other.GetComponent<Enemy>().Die();
+        
         if (PlayerHealth == 0)
             SceneManager.LoadScene(0);
     }

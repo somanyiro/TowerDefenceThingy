@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
             TextParticle tpReward = Instantiate(textParticle);
             tpReward.Setup(carriedMoney.ToString(), true, Color.white);
             tpReward.transform.position = transform.position;
+            MoneyManager.Instance.Earn(carriedMoney);
         }
         
         if (health <= 0)
@@ -83,13 +84,11 @@ public class Enemy : MonoBehaviour
             slowDuration = duration;
     }
 
-    void Die()
+    public void Die()
     {
         SetActive(false);
         OnDied(EventArgs.Empty);
         transform.position = new Vector3(0, -100, 0);
-        
-        MoneyManager.Instance.Earn(carriedMoney);
     }
     
     void UpdateHealthBar()
