@@ -5,6 +5,7 @@ using UnityEngine;
 using PathCreation;
 using PathCreation.Examples;
 using System.Linq;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class EnemyManager : MonoBehaviour
@@ -67,6 +68,11 @@ public class EnemyManager : MonoBehaviour
         {
             wavePreperationTimer.SetWaitTime(waves[CurrentWave].preperationTime);
             wavePreperationTimer.Reset();
+        }
+        
+        if (!waveOngoing && CurrentWave == waves.Count && activeEnemies.Count == 0)
+        {
+            SceneManager.LoadScene(3);
         }
 
     }
