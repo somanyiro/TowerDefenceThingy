@@ -33,8 +33,10 @@ public class WaveDisplay : MonoBehaviour
         waveStarter.blocksRaycasts = false;
     }
 
-    public void OnWaveFinished(object sender, EventArgs e)
+    public void OnWaveFinished(object sender, bool isFinalWave)
     {
+        if (isFinalWave) return;
+        
         waveStarter.alpha = 1;
         waveStarter.interactable = true;
         waveStarter.blocksRaycasts = true;

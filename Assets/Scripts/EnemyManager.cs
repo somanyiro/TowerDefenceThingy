@@ -24,7 +24,7 @@ public class EnemyManager : MonoBehaviour
     public int CurrentWave { get; private set; } = 0;
     public float TimeTillNextWave { get; private set; }
     
-    public delegate void WaveFinishedEventHandler(object sender, EventArgs e);
+    public delegate void WaveFinishedEventHandler(object sender, bool isFinalWave);
     public event WaveFinishedEventHandler WaveFinished;
     public delegate void WaveStartedEventHandler(object sender, EventArgs e);
     public event WaveStartedEventHandler WaveStarted;
@@ -104,7 +104,7 @@ public class EnemyManager : MonoBehaviour
         }
 
         waveOngoing = false;
-        OnWaveFinished(EventArgs.Empty);
+        OnWaveFinished(EventArgs.Empty, CurrentWave == waves.Count);
     }
 
     public void SkipWavePreperation()
@@ -112,10 +112,10 @@ public class EnemyManager : MonoBehaviour
         wavePreperationTimer.SetWaitTime(0);
     }
     
-    protected virtual void OnWaveFinished(EventArgs e)
+    protected virtual void OnWaveFinished(EventArgs e, bool isFinalWave)
     {
         WaveFinishedEventHandler handler = WaveFinished;
-        handler?.Invoke(this, e);
+        handler?.Invoke(this, isFinalWave);
     }
     
     protected virtual void OnWaveStarted(EventArgs e)
