@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Wave8
   m_EditorClassIdentifier: 
   preperationTime: 90
-  timeBetweenSpawns: 0.5
+  timeBetweenSpawns: 0.7
   enemyOrder:
     keys:
     - {fileID: 3588123697436304269, guid: 05949a3afb98087bb83a7cb6f6d7b4ae, type: 3}
     - {fileID: 6586323529246531157, guid: c09f0b7658707f4debe73f0f687039da, type: 3}
     - {fileID: 3588123697436304269, guid: 05949a3afb98087bb83a7cb6f6d7b4ae, type: 3}
     - {fileID: 8756368099194950816, guid: 3030d79f94ac9a167a6abe0b23a116cb, type: 3}
-    - {fileID: 6586323529246531157, guid: c09f0b7658707f4debe73f0f687039da, type: 3}
-    values: 05000000020000000a0000000a00000005000000
+    - {fileID: 7889598247770575135, guid: b7dd6e359341b2c70a1a0034cfb2e02d, type: 3}
+    values: 05000000020000000a0000000500000003000000
