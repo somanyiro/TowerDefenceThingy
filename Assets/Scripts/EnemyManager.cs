@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
-using PathCreation.Examples;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;

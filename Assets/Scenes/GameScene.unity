@@ -2561,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -2569,7 +2569,7 @@ PrefabInstance:
       objectReference: {fileID: 6628547832029658165, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 7332110029861375472, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: tower
@@ -2613,7 +2613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -2621,7 +2621,7 @@ PrefabInstance:
       objectReference: {fileID: 6628547832029658165, guid: ee0493d1bfc4368139ea49be0b83e6f7, type: 3}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 9047372419878068383, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6179,7 +6179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6187,7 +6187,7 @@ PrefabInstance:
       objectReference: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 7332110029861375472, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: tower
@@ -6231,7 +6231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6239,7 +6239,7 @@ PrefabInstance:
       objectReference: {fileID: 4530766752818487920, guid: 3363eed99c6b60cefb621b4e21b673b9, type: 3}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 9047372419878068383, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7779,7 +7779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -7787,7 +7787,7 @@ PrefabInstance:
       objectReference: {fileID: 1019112304611803045, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 7332110029861375472, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: tower
@@ -7831,7 +7831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -7839,7 +7839,7 @@ PrefabInstance:
       objectReference: {fileID: 1019112304611803045, guid: 5407c87f4210c4f5d94045bd3aedc61b, type: 3}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 9047372419878068383, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7996,7 +7996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -8004,7 +8004,7 @@ PrefabInstance:
       objectReference: {fileID: 6058435611437860587, guid: 50b77cf24f96b5006b66fb9bbdf92a99, type: 3}
     - target: {fileID: 6183157486462552772, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 7332110029861375472, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: tower
@@ -8048,7 +8048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerBuilder, Assembly-CSharp
+      value: TowerBuilder, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -8056,7 +8056,7 @@ PrefabInstance:
       objectReference: {fileID: 6058435611437860587, guid: 50b77cf24f96b5006b66fb9bbdf92a99, type: 3}
     - target: {fileID: 8097684282243273104, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Tower, Assembly-CSharp
+      value: Tower, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 9047372419878068383, guid: 7d649ae09478a9efbbedf74b808629c4, type: 3}
       propertyPath: m_AnchorMax.y

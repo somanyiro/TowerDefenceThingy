@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 881004849698190733}
-  - component: {fileID: 881004849698190734}
   - component: {fileID: 881004849698190735}
   - component: {fileID: 881004849698190728}
   - component: {fileID: 6293823999538746521}
+  - component: {fileID: 3473819622664800079}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -36,22 +36,6 @@ Transform:
   - {fileID: 4408545091772490423}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &881004849698190734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881004849698190729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathCreator: {fileID: 0}
-  endOfPathInstruction: 2
-  speed: 5
-  distanceTravelled: 0
 --- !u!54 &881004849698190735
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,10 +100,27 @@ MonoBehaviour:
   maxHealth: 100
   speed: 5
   carriedMoney: 5
+  towerAimTarget: {x: 0, y: 0, z: 0}
   healthBarCanvas: {fileID: 1450415209613140010}
   healthBar: {fileID: 1726775014877945317}
   textParticle: {fileID: 5715286696534387235, guid: b1ace3b0352d44eccb47520fd0948ceb, type: 3}
   isActive: 0
+--- !u!114 &3473819622664800079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881004849698190729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9174101d602d030bbaa9270bc3b86e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathCreator: {fileID: 0}
+  endOfPathInstruction: 0
+  speed: 5
+  distanceTravelled: 0
 --- !u!1 &1808424434240354227
 GameObject:
   m_ObjectHideFlags: 0

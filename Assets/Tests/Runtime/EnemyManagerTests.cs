@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
 public class EnemyManagerTests
 {
-    // A Test behaves as an ordinary method
-    [Test]
-    public void EnemyManagerTestsSimplePasses()
+    [SetUp]
+    public void Setup()
     {
-        // Use the Assert class to test conditions
+        SceneManager.LoadScene("TestScene");
     }
-
+    
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
     [UnityTest]
     public IEnumerator EnemyManagerTestsWithEnumeratorPasses()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
+        //Assert.NotNull(EnemyManager.Instance);
         yield return null;
     }
 }

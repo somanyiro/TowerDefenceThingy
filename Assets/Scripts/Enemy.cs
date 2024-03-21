@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using PathCreation.Examples;
+using PathCreation;
 using UnityEngine;
 using UnityEngine.UI;
 
