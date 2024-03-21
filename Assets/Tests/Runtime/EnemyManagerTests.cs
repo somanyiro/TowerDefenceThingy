@@ -17,9 +17,12 @@ public class EnemyManagerTests
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator EnemyManagerTestsWithEnumeratorPasses()
+    public IEnumerator WaveSpawnTest()
     {
-        //Assert.NotNull(EnemyManager.Instance);
-        yield return null;
+        yield return new WaitForSeconds(0.7f);
+
+        Assert.AreEqual(GameObject.FindObjectsOfType(typeof(Enemy)).Length, 3);
+
+        //Assert.IsNotNull(EnemyManager.Instance);
     }
 }
