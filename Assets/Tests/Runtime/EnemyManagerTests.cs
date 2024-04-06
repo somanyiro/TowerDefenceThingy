@@ -12,7 +12,7 @@ public class EnemyManagerTests
     [SetUp]
     public void Setup()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("ManagerTestScene");
     }
     
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use

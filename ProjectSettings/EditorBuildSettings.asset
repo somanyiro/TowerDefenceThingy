@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WonScene.unity
     guid: f3ead7c8e4f817b1993e9e0c9f56a00e
   - enabled: 1
-    path: Assets/Tests/TestScene.unity
+    path: Assets/Tests/ManagerTestScene.unity
     guid: de80d9d8f114a346caf73afa0d1eb0e6
+  - enabled: 1
+    path: Assets/Tests/TowerTestScene.unity
+    guid: 289bffad8f7a858b0969647cc4fada2f
   m_configObjects: {}

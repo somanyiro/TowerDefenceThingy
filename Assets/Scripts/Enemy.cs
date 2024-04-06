@@ -9,7 +9,10 @@ public class Enemy : MonoBehaviour
 {
     public string type;
     public int maxHealth;
-    private int health;
+    private int currentHealth;
+    public int Health {
+        get => currentHealth;
+        private set => currentHealth = value; }
     public int speed;
     public int carriedMoney;
     public Vector3 towerAimTarget;
@@ -29,7 +32,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         GetComponent<PathFollower>().speed = speed;
-        health = maxHealth;
+        currentHealth = maxHealth;
         UpdateHealthBar();
         
         camera = Camera.main;
@@ -54,12 +57,12 @@ public class Enemy : MonoBehaviour
     
     public void Damage(int amount)
     {
-        if (health <= 0) return;
+        if (currentHealth <= 0) return;
         
-        health -= amount;
+        currentHealth -= amount;
         UpdateHealthBar();
 
-        if (health > 0)
+        if (currentHealth > 0)
         {
             TextParticle tpDamage = Instantiate(textParticle);
             tpDamage.Setup(amount.ToString(), false, Color.red);
@@ -73,7 +76,7 @@ public class Enemy : MonoBehaviour
             MoneyManager.Instance.Earn(carriedMoney);
         }
         
-        if (health <= 0)
+        if (currentHealth <= 0)
             Die();
     }
 
@@ -93,7 +96,7 @@ public class Enemy : MonoBehaviour
     
     void UpdateHealthBar()
     {
-        healthBar.value = Map(health, 0, maxHealth, 0, 1);
+        healthBar.value = Map(currentHealth, 0, maxHealth, 0, 1);
     }
     
     float Map(float value, float low1, float high1, float low2, float high2)
@@ -110,7 +113,7 @@ public class Enemy : MonoBehaviour
             GetComponent<PathFollower>().enabled = true;
             GetComponent<PathFollower>().distanceTravelled = 0;
             this.enabled = true;
-            health = maxHealth;
+            currentHealth = maxHealth;
             UpdateHealthBar();
         }
         else
