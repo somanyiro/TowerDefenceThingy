@@ -5,6 +5,7 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
+using System.Linq;
 
 public class EnemyManagerTests
 {
@@ -19,10 +20,14 @@ public class EnemyManagerTests
     [UnityTest]
     public IEnumerator WaveSpawnTest()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.8f);
 
-        Assert.AreEqual(GameObject.FindObjectsOfType(typeof(Enemy)).Length, 3);
-
-        //Assert.IsNotNull(EnemyManager.Instance);
+        bool matchesConfig = true;
+        Enemy[] enemies = GameObject.FindObjectsOfType(typeof(Enemy)) as Enemy[];
+        if (enemies.Length != 3) matchesConfig = false;
+        if (enemies.Where(x => x.type == "Alien").ToList().Count != 2) matchesConfig = false;
+        if (enemies.Where(x => x.type == "Drone").ToList().Count != 1) matchesConfig = false;
+        
+        Assert.IsTrue(matchesConfig);
     }
 }
