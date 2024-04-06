@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tests/TowerTestScene.unity
     guid: 289bffad8f7a858b0969647cc4fada2f
+  - enabled: 1
+    path: Assets/Tests/EnemyMovementTests.unity
+    guid: 8e19a5121e8fc7da186455c541c285c4
   m_configObjects: {}
