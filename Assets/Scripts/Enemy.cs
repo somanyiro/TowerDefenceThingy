@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         SetActive(false);
-        EventBus.Instance.Trigger(EventBus.EventType.EnemyDied, this);
+        EventBus.Trigger(EventBus.EventType.EnemyDied, this);
         transform.position = new Vector3(0, -100, 0);
     }
     

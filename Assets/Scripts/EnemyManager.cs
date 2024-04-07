@@ -35,8 +35,8 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBus.Instance.Subscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
-        EventBus.Instance.Subscribe(EventBus.EventType.SkippedWavePreparation, SkipWavePreperation);
+        EventBus.Subscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
+        EventBus.Subscribe(EventBus.EventType.SkippedWavePreparation, SkipWavePreperation);
         wavePreperationTimer = new Timer(0);
         if (waves.Count > CurrentWave)
         {
@@ -47,8 +47,8 @@ public class EnemyManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventBus.Instance.Unsubscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
-        EventBus.Instance.Unsubscribe(EventBus.EventType.SkippedWavePreparation, SkipWavePreperation);
+        EventBus.Unsubscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
+        EventBus.Unsubscribe(EventBus.EventType.SkippedWavePreparation, SkipWavePreperation);
     }
 
     // Update is called once per frame
@@ -99,7 +99,7 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator SpawnWave(Wave wave)
     {
-        EventBus.Instance.Trigger(EventBus.EventType.WaveStarted);
+        EventBus.Trigger(EventBus.EventType.WaveStarted);
         
         foreach (var item in wave.enemyOrder)
         {
@@ -111,7 +111,7 @@ public class EnemyManager : MonoBehaviour
         }
 
         waveOngoing = false;
-        EventBus.Instance.Trigger(EventBus.EventType.WaveFinished, CurrentWave == waves.Count);
+        EventBus.Trigger(EventBus.EventType.WaveFinished, CurrentWave == waves.Count);
     }
 
     public void SkipWavePreperation(object data)

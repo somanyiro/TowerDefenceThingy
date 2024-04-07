@@ -25,7 +25,7 @@ public class HealthManager : MonoBehaviour
         if (other.GetComponent<Enemy>() is null) return;
         PlayerHealth -= 1;
 
-        EventBus.Instance.Trigger(EventBus.EventType.HealthChanged, PlayerHealth);
+        EventBus.Trigger(EventBus.EventType.HealthChanged, PlayerHealth);
         
         other.GetComponent<Enemy>().Die();
         

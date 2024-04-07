@@ -9,12 +9,12 @@ public class MoneyDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBus.Instance.Subscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
+        EventBus.Subscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
     }
 
     private void OnDestroy()
     {
-        EventBus.Instance.Unsubscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
+        EventBus.Unsubscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
     }
 
     // Update is called once per frame

@@ -17,12 +17,12 @@ public class PlayerHealthDisplay : MonoBehaviour
         GetComponent<RectTransform>().sizeDelta = new Vector2(19 * maxPlayerHealth / 2, 26);
         //this is based on the size of the texture that's filling the slider
         slider.value = maxPlayerHealth;
-        EventBus.Instance.Subscribe(EventBus.EventType.HealthChanged, OnHealthChanged);
+        EventBus.Subscribe(EventBus.EventType.HealthChanged, OnHealthChanged);
     }
 
     private void OnDestroy()
     {
-        EventBus.Instance.Unsubscribe(EventBus.EventType.HealthChanged, OnHealthChanged);
+        EventBus.Unsubscribe(EventBus.EventType.HealthChanged, OnHealthChanged);
     }
 
     void OnHealthChanged(object health)

@@ -14,14 +14,14 @@ public class WaveDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBus.Instance.Subscribe(EventBus.EventType.WaveFinished, OnWaveFinished);
-        EventBus.Instance.Subscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
+        EventBus.Subscribe(EventBus.EventType.WaveFinished, OnWaveFinished);
+        EventBus.Subscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
     }
 
     private void OnDestroy()
     {
-        EventBus.Instance.Unsubscribe(EventBus.EventType.WaveFinished, OnWaveFinished);
-        EventBus.Instance.Unsubscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
+        EventBus.Unsubscribe(EventBus.EventType.WaveFinished, OnWaveFinished);
+        EventBus.Unsubscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class WaveDisplay : MonoBehaviour
 
     public void StartWave()
     {
-        EventBus.Instance.Trigger(EventBus.EventType.SkippedWavePreparation);
+        EventBus.Trigger(EventBus.EventType.SkippedWavePreparation);
         waveStarter.alpha = 0;
         waveStarter.interactable = false;
         waveStarter.blocksRaycasts = false;

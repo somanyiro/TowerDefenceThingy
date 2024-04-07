@@ -11,12 +11,12 @@ public class MouseHoverManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventBus.Instance.Subscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
+        EventBus.Subscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
     }
 
     void OnDestroy()
     {
-        EventBus.Instance.Unsubscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
+        EventBus.Unsubscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class MouseHoverManager : MonoBehaviour
             if (towerHit != hoverTarget)
             {
                 hoverTarget = towerHit;
-                EventBus.Instance.Trigger(EventBus.EventType.MouseHoverChanged, hoverTarget);
+                EventBus.Trigger(EventBus.EventType.MouseHoverChanged, hoverTarget);
             }
         }
     }
