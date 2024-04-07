@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     public Canvas healthBarCanvas;
     public Slider healthBar;
     public TextParticle textParticle;
-    private Camera camera;
+    private Camera playerCamera;
 
     private float slowDuration;
     public bool isActive;
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthBar();
         
-        camera = Camera.main;
+        playerCamera = Camera.main;
         SetActive(true);
     }
 
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         }
         
         healthBarCanvas.transform.rotation =
-            Quaternion.LookRotation(healthBarCanvas.transform.position - camera.transform.position);
+            Quaternion.LookRotation(healthBarCanvas.transform.position - playerCamera.transform.position);
     }
     
     public void Damage(int amount)

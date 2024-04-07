@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TextParticle : MonoBehaviour
 {
-    private Camera camera;
+    private Camera playerCamera;
     public TextMeshProUGUI textMeshPro;
     public Image image;
     public Canvas canvas;
@@ -26,7 +26,7 @@ public class TextParticle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camera = Camera.main;
+        playerCamera = Camera.main;
 
         IEnumerator coroutine = DestroySelfIn(lifeTime);
         StartCoroutine(coroutine);
@@ -36,7 +36,7 @@ public class TextParticle : MonoBehaviour
     void Update()
     {
         canvas.transform.rotation =
-            Quaternion.LookRotation(transform.position - camera.transform.position);
+            Quaternion.LookRotation(transform.position - playerCamera.transform.position);
         transform.Translate(Vector3.up * risingSpeed * Time.deltaTime);
     }
 

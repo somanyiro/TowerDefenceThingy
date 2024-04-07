@@ -19,7 +19,8 @@ public class TurretComponent : MonoBehaviour
     {
         if (tower.enemiesInRange.Count > 0)
         {
-            bulletParticles.enableEmission = true;
+            var emission = bulletParticles.emission;
+            emission.enabled = true;
 
             Vector3 target = tower.enemiesInRange[0].transform.position +
                              tower.enemiesInRange[0].towerAimTarget;
@@ -28,7 +29,8 @@ public class TurretComponent : MonoBehaviour
         }
         else
         {
-            bulletParticles.enableEmission = false;
+            var emission = bulletParticles.emission;
+            emission.enabled = false;
         }
     }
     
