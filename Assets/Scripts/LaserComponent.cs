@@ -25,7 +25,7 @@ public class LaserComponent : MonoBehaviour
             lineRenderer.SetPositions(new []
             {
                 transform.position + laserSource,
-                tower.enemiesInRange[0].transform.position + tower.enemiesInRange[0].GetComponent<Enemy>().towerAimTarget
+                tower.enemiesInRange[0].transform.position + tower.enemiesInRange[0].towerAimTarget
             });
 
         }
@@ -39,6 +39,6 @@ public class LaserComponent : MonoBehaviour
     {
         if (tower.enemiesInRange.Count == 0) return;
         
-        tower.enemiesInRange[0].GetComponent<Enemy>().Damage(amount);
+        tower.enemiesInRange[0].Damage(amount);
     }
 }

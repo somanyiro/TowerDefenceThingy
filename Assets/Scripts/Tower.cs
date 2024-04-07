@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
     public int upgradePrice;
     
     [NonSerialized]
-    public List<GameObject> enemiesInRange = new List<GameObject>();
+    public List<Enemy> enemiesInRange = new List<Enemy>();
 
     public UnityEvent<int> attackEvent = new UnityEvent<int>();
     
@@ -35,7 +35,7 @@ public class Tower : MonoBehaviour
     {
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
-            if (enemiesInRange[i].GetComponent<Enemy>().isActive == false)
+            if (enemiesInRange[i].isActive == false)
                 enemiesInRange.RemoveAt(i);
         }
     }
@@ -43,13 +43,14 @@ public class Tower : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Enemy>() is null) return;
-        enemiesInRange.Add(other.gameObject);
+        enemiesInRange.Add(other.GetComponent<Enemy>());
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Enemy>() is null) return;
-        if (enemiesInRange.Contains(other.gameObject)) enemiesInRange.Remove(other.gameObject);
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy is null) return;
+        if (enemiesInRange.Contains(enemy)) enemiesInRange.Remove(enemy);
     }
 
     void InvokeAttack()

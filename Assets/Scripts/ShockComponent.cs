@@ -27,7 +27,7 @@ public class ShockComponent : MonoBehaviour
 
         foreach (var enemy in tower.enemiesInRange)
         {
-            shockPoints.Add(enemy.transform.position + enemy.GetComponent<Enemy>().towerAimTarget);
+            shockPoints.Add(enemy.transform.position + enemy.towerAimTarget);
         }
 
         lineRenderer.positionCount = shockPoints.Count;
@@ -38,7 +38,7 @@ public class ShockComponent : MonoBehaviour
     {
         foreach (var enemy in tower.enemiesInRange)
         {
-            enemy.GetComponent<Enemy>().Damage(amount);
+            enemy.Damage(amount);
         }
     }
 }

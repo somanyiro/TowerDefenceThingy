@@ -24,7 +24,7 @@ public class JammerComponent : MonoBehaviour
     {
         foreach (var enemy in tower.enemiesInRange)
         {
-            enemy.GetComponent<Enemy>().Slow(1.5f, 1);
+            enemy.Slow(1.5f, 1);
         }
     }
 }

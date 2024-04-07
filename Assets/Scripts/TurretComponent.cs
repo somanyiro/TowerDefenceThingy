@@ -22,7 +22,7 @@ public class TurretComponent : MonoBehaviour
             bulletParticles.enableEmission = true;
 
             Vector3 target = tower.enemiesInRange[0].transform.position +
-                             tower.enemiesInRange[0].GetComponent<Enemy>().towerAimTarget;
+                             tower.enemiesInRange[0].towerAimTarget;
             bulletParticles.transform.LookAt(target);
             turret.LookAt(target);
         }
@@ -36,6 +36,6 @@ public class TurretComponent : MonoBehaviour
     {
         if (tower.enemiesInRange.Count == 0) return;
         
-        tower.enemiesInRange[0].GetComponent<Enemy>().Damage(amount);
+        tower.enemiesInRange[0].Damage(amount);
     }
 }
