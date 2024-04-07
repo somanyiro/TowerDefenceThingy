@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,8 +7,6 @@ using UnityEngine.UI;
 
 public class TowerDetailDisplay : MonoBehaviour
 {
-    public MouseHoverManager mouseHoverManager;
-    
     public TextMeshProUGUI towerNameText;
     public Image towerIcon;
     public TextMeshProUGUI towerDetailsText;
@@ -17,17 +16,28 @@ public class TowerDetailDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventBus.Subscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mouseHoverManager.hoverTarget is null) return;
+        
+    }
 
-        towerNameText.text = mouseHoverManager.hoverTarget.towerName;
-        towerIcon.sprite = mouseHoverManager.hoverTarget.icon;
+    void OnHoverChanged(object tower)
+    {
+        if (tower is null) return;
+        Tower hoverTarget = (Tower)tower;
+
+        towerNameText.text = hoverTarget.towerName;
+        towerIcon.sprite = hoverTarget.icon;
         towerDetailsText.text = 
-            $"Level: {mouseHoverManager.hoverTarget.level}\nRange: {mouseHoverManager.hoverTarget.range}m\nAttack: {mouseHoverManager.hoverTarget.attackInterval}/s\nDamage: {mouseHoverManager.hoverTarget.damage}\nType: {mouseHoverManager.hoverTarget.type}";
+            $"Level: {hoverTarget.level}\nRange: {hoverTarget.range}m\nAttack: {hoverTarget.attackInterval}/s\nDamage: {hoverTarget.damage}\nType: {hoverTarget.type}";
     }
 }
