@@ -10,7 +10,10 @@ public class EventBus : MonoBehaviour
     public enum EventType
     {
         EnemyDied,
-        MoneyChanged
+        MoneyChanged,
+        WaveFinished,
+        WaveStarted,
+        SkippedWavePreperation
     }
     
     private Dictionary<EventType, Action<object>> eventDictionary;
@@ -18,11 +21,11 @@ public class EventBus : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        eventDictionary = new Dictionary<EventType, Action<object>>();
     }
 
     private void Start()
     {
-        eventDictionary = new Dictionary<EventType, Action<object>>();
     }
     
     public void Subscribe(EventType type, Action<object> callback)

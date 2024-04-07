@@ -14,8 +14,8 @@ public class WaveDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyManager.Instance.WaveFinished += OnWaveFinished;
-        EnemyManager.Instance.WaveStarted += OnWaveStarted;
+        EventBus.Instance.Subscribe(EventBus.EventType.WaveFinished, OnWaveFinished);
+        EventBus.Instance.Subscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
     }
 
     // Update is called once per frame
@@ -27,22 +27,22 @@ public class WaveDisplay : MonoBehaviour
 
     public void StartWave()
     {
-        EnemyManager.Instance.SkipWavePreperation();
+        EventBus.Instance.Trigger(EventBus.EventType.SkippedWavePreperation);
         waveStarter.alpha = 0;
         waveStarter.interactable = false;
         waveStarter.blocksRaycasts = false;
     }
 
-    public void OnWaveFinished(object sender, bool isFinalWave)
+    public void OnWaveFinished(object isFinalWave)
     {
-        if (isFinalWave) return;
+        if ((bool)isFinalWave) return;
         
         waveStarter.alpha = 1;
         waveStarter.interactable = true;
         waveStarter.blocksRaycasts = true;
     }
 
-    public void OnWaveStarted(object sender, EventArgs e)
+    public void OnWaveStarted(object data)
     {
         waveStarter.alpha = 0;
         waveStarter.interactable = false;

@@ -23,11 +23,6 @@ public class EnemyManager : MonoBehaviour
 
     public int CurrentWave { get; private set; } = 0;
     public float TimeTillNextWave { get; private set; }
-    
-    public delegate void WaveFinishedEventHandler(object sender, bool isFinalWave);
-    public event WaveFinishedEventHandler WaveFinished;
-    public delegate void WaveStartedEventHandler(object sender, EventArgs e);
-    public event WaveStartedEventHandler WaveStarted;
 
     private List<Enemy> activeEnemies = new List<Enemy>();
     private List<Enemy> inactiveEnemies = new List<Enemy>();
@@ -41,6 +36,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         EventBus.Instance.Subscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
+        EventBus.Instance.Subscribe(EventBus.EventType.SkippedWavePreperation, SkipWavePreperation);
         wavePreperationTimer = new Timer(0);
         if (waves.Count > CurrentWave)
         {
@@ -97,7 +93,7 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator SpawnWave(Wave wave)
     {
-        OnWaveStarted(EventArgs.Empty);
+        EventBus.Instance.Trigger(EventBus.EventType.WaveStarted);
         
         foreach (var item in wave.enemyOrder)
         {
@@ -109,24 +105,12 @@ public class EnemyManager : MonoBehaviour
         }
 
         waveOngoing = false;
-        OnWaveFinished(EventArgs.Empty, CurrentWave == waves.Count);
+        EventBus.Instance.Trigger(EventBus.EventType.WaveFinished, CurrentWave == waves.Count);
     }
 
-    public void SkipWavePreperation()
+    public void SkipWavePreperation(object data)
     {
         wavePreperationTimer.SetWaitTime(0);
-    }
-    
-    protected virtual void OnWaveFinished(EventArgs e, bool isFinalWave)
-    {
-        WaveFinishedEventHandler handler = WaveFinished;
-        handler?.Invoke(this, isFinalWave);
-    }
-    
-    protected virtual void OnWaveStarted(EventArgs e)
-    {
-        WaveStartedEventHandler handler = WaveStarted;
-        handler?.Invoke(this, e);
     }
 
     void OnEnemyDied(object enemy)
