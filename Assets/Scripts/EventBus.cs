@@ -14,7 +14,8 @@ public class EventBus : MonoBehaviour
         WaveFinished,
         WaveStarted,
         SkippedWavePreparation,
-        HealthChanged
+        HealthChanged,
+        MouseHoverChanged
     }
     
     private Dictionary<EventType, Action<object>> eventDictionary;
