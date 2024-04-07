@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,6 +10,11 @@ public class MoneyDisplay : MonoBehaviour
     void Start()
     {
         EventBus.Instance.Subscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.Instance.Unsubscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
     }
 
     // Update is called once per frame

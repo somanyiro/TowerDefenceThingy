@@ -18,6 +18,12 @@ public class WaveDisplay : MonoBehaviour
         EventBus.Instance.Subscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
     }
 
+    private void OnDestroy()
+    {
+        EventBus.Instance.Unsubscribe(EventBus.EventType.WaveFinished, OnWaveFinished);
+        EventBus.Instance.Unsubscribe(EventBus.EventType.WaveStarted, OnWaveStarted);
+    }
+
     // Update is called once per frame
     void Update()
     {

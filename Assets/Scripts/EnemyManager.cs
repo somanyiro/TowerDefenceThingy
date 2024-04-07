@@ -45,6 +45,12 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        EventBus.Instance.Unsubscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
+        EventBus.Instance.Unsubscribe(EventBus.EventType.SkippedWavePreperation, SkipWavePreperation);
+    }
+
     // Update is called once per frame
     void Update()
     {
