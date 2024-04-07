@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Raycasts from the mouse to the world and updates the hover target.
+/// </summary>
 public class MouseHoverManager : MonoBehaviour
 {
     [NonSerialized]

@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Responsible for building and modifying towers.
+/// It shows the shop UI when a tower spot is clicked and the modify UI when a tower is clicked.
+/// </summary>
 public class TowerBuilder : MonoBehaviour
 {
     private TowerSpot selectedSpot;

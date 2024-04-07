@@ -5,6 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Shows the details of a tower when the mouse hovers over it.
+/// </summary>
 public class TowerDetailDisplay : MonoBehaviour
 {
     public TextMeshProUGUI towerNameText;

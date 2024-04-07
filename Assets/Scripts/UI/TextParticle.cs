@@ -4,6 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Simple text particle that rises up and disappears after a set amount of time.
+/// Used for enemy damage and money gain.
+/// </summary>
 public class TextParticle : MonoBehaviour
 {
     private Camera playerCamera;

@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// All UI in the top right corner of the screen.
+/// Handles, pausing, changing time scale, restarting and quitting the game.
+/// </summary>
 public class InGameMenu : MonoBehaviour
 {
     public CanvasGroup pauseMenu;

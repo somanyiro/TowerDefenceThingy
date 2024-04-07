@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Litsens to the money changed event and updates the money display.
+/// </summary>
 public class MoneyDisplay : MonoBehaviour
 {
     // Start is called before the first frame update

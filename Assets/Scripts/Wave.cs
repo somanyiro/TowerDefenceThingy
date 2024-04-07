@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Scriptable object that holds the information for a wave.
+/// </summary>
 [CreateAssetMenu]
 public class Wave : ScriptableObject
 {

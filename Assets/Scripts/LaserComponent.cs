@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Works together with a tower to damage enemies.
+/// DamageTarget() needs to be hooked up to the tower's attack event.
+/// </summary>
 public class LaserComponent : MonoBehaviour
 {
     public Vector3 laserSource;

@@ -5,6 +5,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// All towers have this component. It handles the tower's range, attack interval, damage, and enemies in range.
+/// It is also responsible for invoking the attack event.
+/// </summary>
 public class Tower : MonoBehaviour
 {
     public string towerName;

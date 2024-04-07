@@ -1,4 +1,7 @@
 
+/// <summary>
+/// Simple timer class I wrote back in GXP times
+/// </summary>
 public class Timer
 {
     float waitTime;

@@ -4,6 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// A button that can be clicked to buy a tower.
+/// A tower prefab needs to be dragged into it in the editor and the click event needs to be hooked up to TowerBuilder.
+/// </summary>
 public class BuyTowerButton : MonoBehaviour
 {
     public Tower tower;

@@ -5,6 +5,11 @@ using PathCreation;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// All enemies have this component. It contains all the information about the enemy, such as health, speed, and money carried.
+/// A PathFollower component is also needed on the enemy, which allows for movement.
+/// This class also has functionality for activating and deactivating for caching.
+/// </summary>
 public class Enemy : MonoBehaviour
 {
     public string type;

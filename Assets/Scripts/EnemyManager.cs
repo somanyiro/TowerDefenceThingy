@@ -7,6 +7,10 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Responsible for spawning enemy waves, as well as caching and reusing enemy objects.
+/// It also updates other objects on wave state with EventBus.
+/// </summary>
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance { get; private set; }

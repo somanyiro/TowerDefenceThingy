@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Minimalistic event bus implementation.
+/// An enum element needs to be created for all events.
+/// </summary>
 public static class EventBus
 {
     public enum EventType

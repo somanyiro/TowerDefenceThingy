@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Sets up and updates the player health display.
+/// </summary>
 public class PlayerHealthDisplay : MonoBehaviour
 {
     private Slider slider;

@@ -5,6 +5,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Displays the current wave and the time until the next wave.
+/// There is also a button to start the next wave.
+/// </summary>
 public class WaveDisplay : MonoBehaviour
 {
     public TextMeshProUGUI waveCountText;

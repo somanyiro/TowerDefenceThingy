@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles all aspects of the game's money.
+/// Made it a singleton to give easy access to the money but it also uses the eventbus to update others.
+/// </summary>
 public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager Instance { get; private set; }
