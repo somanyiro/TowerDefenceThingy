@@ -118,14 +118,14 @@ public class TowerBuilder : MonoBehaviour
         if (selectedTower is null) return;
         if (selectedTower.upgradeTarget is null) return;
         
-        MouseHoverManager.Instance.SetHoverTarget(selectedTower.upgradeTarget);
+        EventBus.Instance.Trigger(EventBus.EventType.MouseHoverChanged, selectedTower.upgradeTarget);
     }
 
     public void PreviewTower(Tower tower)
     {
         if (selectedSpot is null) return;
         
-        MouseHoverManager.Instance.SetHoverTarget(tower);
+        EventBus.Instance.Trigger(EventBus.EventType.MouseHoverChanged, tower);
     }
 
     public void BuyTower(Tower tower)

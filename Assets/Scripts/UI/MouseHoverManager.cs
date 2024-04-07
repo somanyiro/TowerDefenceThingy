@@ -5,20 +5,18 @@ using UnityEngine;
 
 public class MouseHoverManager : MonoBehaviour
 {
-    public static MouseHoverManager Instance { get; private set; }
-    
     [NonSerialized]
     public Tower hoverTarget;
-    
-    private void Awake()
-    {
-        Instance = this;
-    }
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventBus.Instance.Subscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
+    }
+
+    void OnDestroy()
+    {
+        EventBus.Instance.Unsubscribe(EventBus.EventType.MouseHoverChanged, OnHoverChanged);
     }
 
     // Update is called once per frame
@@ -29,14 +27,18 @@ public class MouseHoverManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 10000, LayerMask.GetMask(new[] { "Selectable" })))
         {
-            Transform objectHit = hit.transform;
+            var towerHit = hit.transform.GetComponent<TowerSpot>().tower;
 
-            hoverTarget = objectHit.GetComponent<TowerSpot>().tower;
+            if (towerHit != hoverTarget)
+            {
+                hoverTarget = towerHit;
+                EventBus.Instance.Trigger(EventBus.EventType.MouseHoverChanged, hoverTarget);
+            }
         }
     }
 
-    public void SetHoverTarget(Tower newTarget)
+    void OnHoverChanged(object target)
     {
-        hoverTarget = newTarget;
+        hoverTarget = (Tower)target;
     }
 }
