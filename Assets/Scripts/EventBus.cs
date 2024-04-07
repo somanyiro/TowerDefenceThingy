@@ -7,7 +7,12 @@ public class EventBus : MonoBehaviour
 {
     public static EventBus Instance { get; private set; }
     
-    private Dictionary<string, Action<object>> eventDictionary;
+    public enum EventType
+    {
+        EnemyDied
+    }
+    
+    private Dictionary<EventType, Action<object>> eventDictionary;
     
     private void Awake()
     {
@@ -16,26 +21,26 @@ public class EventBus : MonoBehaviour
 
     private void Start()
     {
-        eventDictionary = new Dictionary<string, Action<object>>();
+        eventDictionary = new Dictionary<EventType, Action<object>>();
     }
     
-    public void Register(string eventName, Action<object> callback)
+    public void Subscribe(EventType type, Action<object> callback)
     {
-        if (!eventDictionary.ContainsKey(eventName))
-            eventDictionary[eventName] = null;
+        if (!eventDictionary.ContainsKey(type))
+            eventDictionary[type] = null;
 
-        eventDictionary[eventName] += callback;
+        eventDictionary[type] += callback;
     }
     
-    public void Unregister(string eventName, Action<object> callback)
+    public void Unsubscribe(EventType type, Action<object> callback)
     {
-        if (eventDictionary.ContainsKey(eventName))
-            eventDictionary[eventName] -= callback;
+        if (eventDictionary.ContainsKey(type))
+            eventDictionary[type] -= callback;
     }
 
-    public void Trigger(string eventName, object data = null)
+    public void Trigger(EventType type, object data = null)
     {
-        if (eventDictionary.ContainsKey(eventName))
-            eventDictionary[eventName]?.Invoke(data);
+        if (eventDictionary.ContainsKey(type))
+            eventDictionary[type]?.Invoke(data);
     }
 }
