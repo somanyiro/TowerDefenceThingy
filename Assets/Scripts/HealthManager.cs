@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
+    public static HealthManager Instance { get; private set; }
+    
     public int maxPlayerHealth = 5;
     public int PlayerHealth { get; private set; }
     
@@ -12,6 +15,11 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         PlayerHealth = maxPlayerHealth;
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     // Update is called once per frame
