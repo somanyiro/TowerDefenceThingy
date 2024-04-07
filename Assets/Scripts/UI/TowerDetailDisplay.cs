@@ -10,8 +10,6 @@ public class TowerDetailDisplay : MonoBehaviour
     public TextMeshProUGUI towerNameText;
     public Image towerIcon;
     public TextMeshProUGUI towerDetailsText;
-
-    public Sprite emptySlotIcon;
     
     // Start is called before the first frame update
     void Start()
