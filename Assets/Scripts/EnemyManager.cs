@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         EventBus.Instance.Subscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
-        EventBus.Instance.Subscribe(EventBus.EventType.SkippedWavePreperation, SkipWavePreperation);
+        EventBus.Instance.Subscribe(EventBus.EventType.SkippedWavePreparation, SkipWavePreperation);
         wavePreperationTimer = new Timer(0);
         if (waves.Count > CurrentWave)
         {
@@ -48,7 +48,7 @@ public class EnemyManager : MonoBehaviour
     private void OnDestroy()
     {
         EventBus.Instance.Unsubscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
-        EventBus.Instance.Unsubscribe(EventBus.EventType.SkippedWavePreperation, SkipWavePreperation);
+        EventBus.Instance.Unsubscribe(EventBus.EventType.SkippedWavePreparation, SkipWavePreperation);
     }
 
     // Update is called once per frame

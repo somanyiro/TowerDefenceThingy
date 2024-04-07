@@ -33,7 +33,7 @@ public class WaveDisplay : MonoBehaviour
 
     public void StartWave()
     {
-        EventBus.Instance.Trigger(EventBus.EventType.SkippedWavePreperation);
+        EventBus.Instance.Trigger(EventBus.EventType.SkippedWavePreparation);
         waveStarter.alpha = 0;
         waveStarter.interactable = false;
         waveStarter.blocksRaycasts = false;

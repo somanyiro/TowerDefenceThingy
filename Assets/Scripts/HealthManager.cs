@@ -5,15 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
-    public static HealthManager Instance { get; private set; }
-
     public int maxPlayerHealth = 5;
     public int PlayerHealth { get; private set; }
-    
-    private void Awake()
-    {
-        Instance = this;
-    }
     
     // Start is called before the first frame update
     void Start()
@@ -32,6 +25,8 @@ public class HealthManager : MonoBehaviour
         if (other.GetComponent<Enemy>() is null) return;
         PlayerHealth -= 1;
 
+        EventBus.Instance.Trigger(EventBus.EventType.HealthChanged, PlayerHealth);
+        
         other.GetComponent<Enemy>().Die();
         
         if (PlayerHealth == 0)

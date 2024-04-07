@@ -13,7 +13,8 @@ public class EventBus : MonoBehaviour
         MoneyChanged,
         WaveFinished,
         WaveStarted,
-        SkippedWavePreperation
+        SkippedWavePreparation,
+        HealthChanged
     }
     
     private Dictionary<EventType, Action<object>> eventDictionary;
