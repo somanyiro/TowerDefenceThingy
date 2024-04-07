@@ -9,7 +9,8 @@ public class EventBus : MonoBehaviour
     
     public enum EventType
     {
-        EnemyDied
+        EnemyDied,
+        MoneyChanged
     }
     
     private Dictionary<EventType, Action<object>> eventDictionary;

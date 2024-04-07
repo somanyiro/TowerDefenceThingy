@@ -25,9 +25,6 @@ public class Enemy : MonoBehaviour
     private float slowDuration;
     public bool isActive;
     
-    public delegate void DiedEventHandler(object sender, EventArgs e);
-    public event DiedEventHandler Died;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +87,7 @@ public class Enemy : MonoBehaviour
     public void Die()
     {
         SetActive(false);
-        OnDied(EventArgs.Empty);
+        EventBus.Instance.Trigger(EventBus.EventType.EnemyDied, this);
         transform.position = new Vector3(0, -100, 0);
     }
     
@@ -121,11 +118,5 @@ public class Enemy : MonoBehaviour
             GetComponent<PathFollower>().enabled = false;
             this.enabled = false;
         }
-    }
-    
-    protected virtual void OnDied(EventArgs e)
-    {
-        DiedEventHandler handler = Died;
-        handler?.Invoke(this, e);
     }
 }

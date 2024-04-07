@@ -18,6 +18,7 @@ public class MoneyManager : MonoBehaviour
             Debug.Log("Spent more than allowed money");
             Money = 0;
         }
+        EventBus.Instance.Trigger(EventBus.EventType.MoneyChanged, Money);
     }
 
     public void Earn(int amount)
@@ -25,6 +26,7 @@ public class MoneyManager : MonoBehaviour
         Money += amount;
         if (Money > 999)
             Money = 999;
+        EventBus.Instance.Trigger(EventBus.EventType.MoneyChanged, Money);
     }
 
     private void Start()

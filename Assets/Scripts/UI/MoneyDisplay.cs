@@ -8,12 +8,17 @@ public class MoneyDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventBus.Instance.Subscribe(EventBus.EventType.MoneyChanged, OnMoneyChanged);
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = MoneyManager.Instance.Money.ToString();
+        
+    }
+
+    void OnMoneyChanged(object money)
+    {
+        GetComponent<TextMeshProUGUI>().text = ((int)money).ToString();
     }
 }

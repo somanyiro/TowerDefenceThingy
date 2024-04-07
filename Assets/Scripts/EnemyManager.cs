@@ -40,6 +40,7 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventBus.Instance.Subscribe(EventBus.EventType.EnemyDied, OnEnemyDied);
         wavePreperationTimer = new Timer(0);
         if (waves.Count > CurrentWave)
         {
@@ -91,7 +92,6 @@ public class EnemyManager : MonoBehaviour
         
         GameObject newEnemy = Instantiate(enemy.gameObject, new Vector3(0, -100, 0), Quaternion.identity);
         newEnemy.GetComponent<PathFollower>().pathCreator = path;
-        newEnemy.GetComponent<Enemy>().Died += OnEnemyDied;
         activeEnemies.Add(newEnemy.GetComponent<Enemy>());
     }
 
@@ -129,10 +129,10 @@ public class EnemyManager : MonoBehaviour
         handler?.Invoke(this, e);
     }
 
-    public void OnEnemyDied(object sender, EventArgs e)
+    void OnEnemyDied(object enemy)
     {
-        inactiveEnemies.Add(sender as Enemy);
-        if (activeEnemies.Contains(sender))
-            activeEnemies.Remove(sender as Enemy);
+        inactiveEnemies.Add(enemy as Enemy);
+        if (activeEnemies.Contains(enemy))
+            activeEnemies.Remove(enemy as Enemy);
     }
 }
